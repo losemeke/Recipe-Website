@@ -8,105 +8,266 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <div class="side-links">
-            <ul>                    
-                <li> 
-                    <div class="side-anchor">
-                        <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Home </a>
-                    </div> 
-                </li>
-                <li> 
-                    <div class="side-anchor">
-                        <a href="https://elementor.com/blog/color-theory-web-design/?utm_source=chatgpt.com" target="#"> Saved Recipes </a>
-                    </div>
-                </li>
-                <li>  
-                    <div class="side-anchor">
-                        <a href="https://www.newtarget.com/web-insights-blog/color-psychology-in-website-design/?utm_source=chatgpt.com" target="#"> Grocery List </a>
-                    </div>
-                </li>
-                <li>  
-                    <div class="side-anchor">
-                        <a href="https://mail.google.com/mail/u/0/?pli=1#inbox" target="#"> Preferences </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="account-container">
-            <button class="sidebar-signup"> Sign up </button>
-        </div>
-    </div>
-
-    <div class="main_content">
-        <div class="header">
-            <div class="left_side">
-                <button class="side_button" id="side-button"> <i class="fa-solid fa-bars fa-xl"></i> </button>
-
-                <div class="logo_container">
-                    <img src="./ASSETS/image.png" alt="logo image" class="logo_img">
-                    <p> Letté Recipes </p>
-                </div>
+    <div class="homepage_container">
+        <div class="sidebar" id="sidebar">
+            <div class="side-links">
+                <ul>                    
+                    <li class="side-anchor"> 
+                        <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Home </a> 
+                    </li>
+                    <li class="side-anchor"> 
+                        <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Saved Recipes </a> 
+                    </li>
+                    <li class="side-anchor"> 
+                        <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Filters </a> 
+                    </li>
+                </ul>
             </div>
-
-            <div class="right_side">
-                <div class="right_box">
-                    <button class="favourites_button" id="favourites-button">
-                        <p class="button_text"> Favourites </p>
-                        <i class="fa-solid fa-heart fa-lg"></i>
-                    </button>
-                    
-                    <div class="signup_container">
-                        <button class="signin_button"> Sign In </button>
-                        <button class="signup_button"> Sign Up </button>
-                    </div>
-                </div>
-                
-                <div class="right_side_pic"> <img src="./ASSETS/Work Photo.jpg" alt=""> </div>
-            </div>
-        </div>
-    
-        <div class="main_section">
-            <section class="hero_section" id="hero-section">
-
-                <div class="hero-content">
-                    <h1> Find the Perfect Recipe </h1>
-                    <p> Start typing an ingredient to see suggestions. </p>
-                </div>
-
-                <input type="text" id="search-input" placeholder="e.g. chicken, tomato, rice..." />
-            </section>
             
-            <section class="search_results hidden" id="search-results"></section>
-
-            <section class="random-recipes" id="random-recipes">
-                <!-- <div class="recipe_card">
-                        <a href="">
-                            <div class="thumbnail">
-                                <img src="./ASSETS/hero_image.jpg" alt="">
+            <div class="account-container">
+                <button class="sidebar-signup"> Sign up </button>
+            </div>
+        </div>
+    
+        <div class="main_content">
+            <div class="header">
+                <div class="left_side">
+                    <button class="side_button" id="side-button"> <i class="fa-solid fa-bars fa-xl"></i> </button>
+    
+                    <div class="logo_container">
+                        <img src="./ASSETS/image.png" alt="logo image" class="logo_img">
+                        <p> Letté Recipes </p>
+                    </div>
+                </div>
+    
+                <div class="right_side">
+                    <div class="right_box">
+                        <button class="favourites_button" id="favourites-button">
+                            <p class="button_text"> Favourites </p>
+                            <i class="fa-solid fa-heart fa-lg"></i>
+                        </button>
+                        
+                        <div class="signup_container">
+                            <button class="signin_button"> Sign In </button>
+                            <button class="signup_button"> Sign Up </button>
+                        </div>
+                    </div>
+                    
+                    <div class="right_side_pic"> <img src="./ASSETS/Work Photo.jpg" alt=""> </div>
+                </div>
+            </div>
+        
+            <div class="main_section">
+                <section class="hero_section" id="hero-section">
+    
+                    <div class="hero-content">
+                        <h1> Find the Perfect Recipe </h1>
+                        <p> Start typing an ingredient to see suggestions. </p>
+                    </div>
+    
+                    <input type="text" id="search-input" placeholder="e.g. chicken, tomato, rice..." />
+    
+                    <div class="filters_container">
+                        <div class="filters_button">
+                            <button class="filter_button" id="chicken-button"> Chicken </button>
+                        </div>
+    
+                        <div class="filters_button">
+                            <button class="filter_button" id="vegan-button"> Vegetarian </button>
+                        </div>
+    
+                        <div class="filters_button">
+                            <button class="filter_button" id="dessert-button"> Dessert </button>
+                        </div>
+    
+                        <div class="filters_button">
+                            <button class="filter_button" id="chinese-button"> Chinese </button>
+                        </div>
+    
+                        <div class="filters_button">
+                            <button class="filter_button" id="mexican-button"> Mexican </button>
+                        </div>
+    
+                        <div class="filters_button">
+                            <button class="filter_button" id="italian-button"> Italian </button>
+                        </div>
+    
+                        <div class="filters_button">
+                            <button class="filters" id="filters-button"> <img src="./ASSETS/filters_icon.png" alt="">  </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="search_results hidden" id="search-results"></section>
+    
+                <section class="random-recipes" id="random-recipes">
+                    <!-- <div class="recipe_card">
+                            <a href="">
+                                <div class="thumbnail">
+                                    <img src="./ASSETS/hero_image.jpg" alt="">
+                                </div>
+            
+                                <div class="recipe_details">
+                                    <h4 class="name"> name of meal </h4>
+                                    <div class="description">
+                                        <p class="category"> Misc </p>
+                                        <p class="time"> 10 mins </p>
+                                        <p class="area"> African </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                </section>
+            </div>
+        
+            <div class="footer">
+                <p> © 2025 Letté Recipes All Rights Reserved, Designed by Lettie Osemeke. </p>
+            </div>
+        </div>
+    
+        <div class="filters_popup hidden" id="filters-popup">
+            <div class="categories">
+                <div class="filter_categories diet_filter_categories">
+                    <div class="filter_label">
+                        <p> Diet</p>
+                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                    </div>
+        
+                    <div class="checklist_containers hidden">
+                        <ul class="diet_checklist">
+                            <li> <label> <input type="checkbox" value="Beef"> Beef </label> </li>
+                            <li> <label> <input type="checkbox" value="Breakfast"> Breakfast </label> </li>
+                            <li> <label> <input type="checkbox" value="Chicken"> Chicken </label> </li>
+                            <li> <label> <input type="checkbox" value="Dessert"> Dessert </label> </li>
+                            <li> <label> <input type="checkbox" value="Goat"> Goat </label> </li>
+                            <li> <label> <input type="checkbox" value="Lamb"> Lamb </label> </li>
+                            <li> <label> <input type="checkbox" value="Pasta"> Pasta </label> </li>
+                            <li> <label> <input type="checkbox" value="Pork"> Pork </label> </li>
+                            <li> <label> <input type="checkbox" value="Seafood"> Seafood </label> </li>
+                            <li> <label> <input type="checkbox" value="Side"> Side </label> </li>
+                            <li> <label> <input type="checkbox" value="Starter"> Starter </label> </li>
+                            <li> <label> <input type="checkbox" value="Vegan"> Vegan </label> </li>
+                            <li> <label> <input type="checkbox" value="Vegetarian"> Vegetarian </label> </li>
+                            <li> <label> <input type="checkbox" value="Miscellaneous"> Other </label> </li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="filter_categories region_filter_categories">
+                    <div class="filter_label" id="region_filter_label">
+                        <p> Region </p>
+                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                    </div>
+        
+                    <div class="regional_checklist hidden">
+                        <div class="checklists region_checklist">
+                            <div class="filter_label regional_label africa">
+                                <p> Africa </p>
+                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
                             </div>
         
-                            <div class="recipe_details">
-                                <h4 class="name"> name of meal </h4>
-                                <div class="description">
-                                    <p class="category"> Misc </p>
-                                    <p class="time"> 10 mins </p>
-                                    <p class="area"> African </p>
-                                </div>
+                            <div class="checklist_containers">
+                                <ul class="countries">
+                                    <li> <label> <input type="checkbox" value="Kenyan"> Kenyan </label> </li>
+                                    <li> <label> <input type="checkbox" value="Moroccan"> Moroccan </label> </li>
+                                    <li> <label> <input type="checkbox" value="Tunisian"> Tunisian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Egyptian"> Egyptian </label> </li>
+                                </ul>
                             </div>
-                        </a>
-                    </div> -->
-            </section>
-        </div>
-    
-        <div class="footer">
-            <p> © 2025 Letté Recipes All Rights Reserved, Designed by Lettie Osemeke. </p>
+                        </div>
+        
+                        <div class="region_checklist">
+                            <div class="filter_label regional_label asia" id="asia_filter_label">
+                                <p> Asia </p>
+                                <button> <i class="fa-solid fa-chevron-right" id="asia_dropdown"></i> </button>
+                            </div>
+        
+                            <div class="checklist_containers">
+                                <ul class="countries">
+                                    <li> <label> <input type="checkbox" value="Chinese"> Chinese </label> </li>
+                                    <li> <label> <input type="checkbox" value="Filipino"> Filipino </label> </li>
+                                    <li> <label> <input type="checkbox" value="Indian"> Indian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Japanese"> Japanese </label> </li>
+                                    <li> <label> <input type="checkbox" value="Malaysian"> Malaysian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Thai"> Thai </label> </li>
+                                    <li> <label> <input type="checkbox" value="Vietnamese"> Vietnamese </label> </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="region_checklist">
+                            <div class="filter_label regional_label caribbean">
+                                <p> Caribbean </p>
+                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                            </div>
+        
+                            <div class="checklist_containers">
+                                <ul class="countries">
+                                    <li> <label> <input type="checkbox" value="Jamaican"> Jamaican </label> </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="region_checklist">
+                            <div class="filter_label regional_label europe" id="europe_filter_label">
+                                <p> Europe </p>
+                                <button> <i class="fa-solid fa-chevron-right" id="europe_dropdown"></i> </button>
+                            </div>
+        
+                            <div class="checklist_containers">
+                                <ul class="countries">
+                                    <li> <label> <input type="checkbox" value="British"> British </label> </li>
+                                    <li> <label> <input type="checkbox" value="Dutch"> Dutch </label> </li>
+                                    <li> <label> <input type="checkbox" value="French"> French </label> </li>
+                                    <li> <label> <input type="checkbox" value="Greek"> Greek </label> </li>
+                                    <li> <label> <input type="checkbox" value="Irish"> Irish </label> </li>
+                                    <li> <label> <input type="checkbox" value="Italian"> Italian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Polish"> Polish </label> </li>
+                                    <li> <label> <input type="checkbox" value="Portuguese"> Portuguese </label> </li>
+                                    <li> <label> <input type="checkbox" value="Russian"> Russian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Spanish"> Spanish </label> </li>
+                                    <li> <label> <input type="checkbox" value="Ukrainian"> Ukrainian </label> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="region_checklist">
+                            <div class="filter_label regional_label north-america">
+                                <p> North America </p>
+                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                            </div>
+        
+                            <div class="checklist_containers">
+                                <ul class="countries">
+                                    <li> <label> <input type="checkbox" value="American"> American </label> </li>
+                                    <li> <label> <input type="checkbox" value="Canadian"> Canadian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Mexican"> Mexican </label> </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- <div class="region_checklist">
+                            <div class="filter_label regional_label south-america">
+                                <p> South America </p>
+                                <button> <i class="fa-solid fa-chevron-right" id="sa_dropdown"></i> </button>
+                            </div>
+        
+                            <div class="checklist_containers">
+                                <ul class="countries">
+                                    <li> <label> <input type="checkbox" value="Uruguayan"> Uruguayan </label> </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            
+            <button class="clear_filters" id="clear-filters"> Clear Filters </button>
         </div>
     </div>
-
     
 
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./filters.js"></script>
 </body>
 </html>

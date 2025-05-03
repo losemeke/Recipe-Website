@@ -19,12 +19,17 @@
 .visible {
     display: flex !important; /* or grid, or whatever you're using */
 }
-
-body{
-    background-color: #fff6e5;
-}
   
 /* HOME PAGE */
+.homepage_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff6e5;
+    position: relative;
+}
+
 .sidebar{
     display: none;
 }
@@ -47,7 +52,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: .2rem 1.5rem 0 1.5rem;
+    padding: .2rem .8rem 0 1rem;
 }
 
 .left_side{
@@ -128,12 +133,12 @@ body{
 }
 
 .favourites_button p{
-    color: #3D2F28;
+    color: #5C4033;
 }
 
 .button_text{
     font-size: .95rem;
-    color: #333;
+    color: #5C4033;
 }
 
 .favourites_button i{
@@ -153,7 +158,7 @@ body{
 .signup_container button{
     padding: .3rem .6rem;
     font-size: .95rem;
-    color: #3D2F28;
+    color: #5C4033;
     border-radius: .3rem;
     cursor: pointer;
 }
@@ -169,6 +174,7 @@ body{
 
 .signup_button{
     border: none;
+    background: none;
     background-color: #F49B36;
 }
 
@@ -245,6 +251,211 @@ input{
     background-color: white;
 }
 
+.filters_container{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    column-gap: .8rem;
+    padding: 0 .5rem;
+}
+
+.filters_button{
+    width: fit-content;
+    height: auto;
+}
+
+.filters_button button:hover{
+    cursor: pointer;
+}
+
+.filter_button{
+    width: fit-content;
+    height: auto;
+    border: none;
+    background: none;
+    padding: .3rem .75rem;
+    border-radius: .9rem;
+    background-color: #F8A44C;
+    color: #3D2F28;
+    font-weight: 500;
+}
+
+.filter_button:hover {
+    background-color: #E88A26;
+}
+
+.filters{
+    width: fit-content;
+    border: none;
+    background: none;
+    padding: .25rem .3rem 0 .3rem;
+    border-radius: .4rem;
+    background-color: #F8A44C;
+    color: #3D2F28;
+}
+
+.filters:hover {
+    background-color: #E88A26;
+}
+
+.filters_popup{
+    position: absolute;
+    right: 31%;
+    top: calc(100% + 1rem); /* 1rem below hero section */
+    background-color: #FFF2E1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: 4%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    row-gap: .7rem;
+    padding: .5rem;
+    border-radius: .2rem;
+    z-index: 100;
+}
+
+.categories{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    column-gap: .7rem;
+}
+
+.filter_categories{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.diet_filter_categories{
+    width: 45%;
+    row-gap: .5rem;
+}
+
+.filter_label{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem .4rem;
+    border-radius: .3rem;
+    background-color: #FAE3CB;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.filter_label:hover{
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.filter_label p{
+    font-size: .9rem;
+    color: #333;
+}
+
+.filter_label button{
+    width: fit-content;
+    border: none;
+    background-color: inherit;
+}
+
+.filter_label button :hover{
+    cursor: pointer;
+}
+
+fa-chevron-right{
+    color: #333;
+    font-size: .8rem;
+}
+
+fa-chevron-down{
+    color: #333;
+    font-size: .8rem;
+}
+
+.checklist_containers{
+    width: 100%;
+}
+
+ul{
+    width: 90%;
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    width: 94%;
+    padding: 0;
+}
+
+li label{
+    font-size: .9rem;
+    color: #333;
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer;
+} 
+
+.region_filter_categories {
+    width: 55%;
+    row-gap: .3rem;
+}
+
+.regional_checklist{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: .5rem;
+}
+
+.region_checklist{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 0 0 0 .2rem;
+}
+
+.regional_label{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.clear_filters{
+    width: fit-content;
+    border: none;
+    padding: .3rem .6rem;
+    border-radius: 1000rem;
+    background-color: #FAE3CB;
+}
+
+.clear_filters:hover{
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
 .search_results{
     width: 100%;
     height: auto;
@@ -281,7 +492,7 @@ a{
     justify-content: center;
     align-items: center;
     row-gap: 1rem;
-    padding: .8rem 1.2rem;
+    padding: .9rem 1.2rem;
     border-radius: .5rem;
     background-color: #F9DFC8;
     cursor: pointer;
@@ -294,9 +505,9 @@ a{
 
 .heart_icon_container {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    top: .7rem;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, .5);
     display: flex;
     justify-content: center;
     padding: 0.4rem;
@@ -317,15 +528,11 @@ a{
     justify-content: center;
     align-items: center;
     position: relative;
-}
-
-.thumbnail img{
-    width: 100%;
-    max-width: 400px;
-    height: auto;
     border-radius: .75rem;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 62.5%; /* This is 16:10 aspect ratio = (10/16 * 100%) */
 }
 
 .recipe_details{
@@ -345,7 +552,7 @@ a{
 
 .name{
     width: fit-content;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #333;
 }
 
@@ -490,7 +697,7 @@ iframe{
 }
 
 .video_actions i{
-    color: #4E342E;
+    color: #5C4033;
 }
 
 .video_actions p{
@@ -608,10 +815,21 @@ iframe{
 }
   
 /* Monitors */
-@media screen and (min-width: 1500px){
+@media screen and (min-width: 2000px){
     /* HOME PAGE */
+    .hero_section{
+        position: relative;
+    }
+
+    .filters_popup{
+        position: absolute;
+        right: 35%;
+        top: calc(100% + 1rem);
+        width: 20%;
+    }
+
     .recipe_card{
-        width: 23%;
+        width: 22.75%;
     }
 
     .thumbnail{
@@ -650,6 +868,13 @@ iframe{
 /* Tablets */
 @media screen and (max-width: 1200px){
     /* HOME PAGE */
+    .filters_popup{
+        position: absolute;
+        right: 30%;
+        top: calc(100% + 1rem);
+        width: 38%;
+    }
+
     .recipe_card{
         width: 48%;
         padding: 1rem 1.2rem;
@@ -688,18 +913,51 @@ iframe{
     }
 }
 
+/* @media screen and (min-width: 1099px) {
+    .filters_popup{
+        right: 29%;
+        top: 7.9%;
+        width: 40%;
+    } 
+} */
+
+/* @media screen and (max-width: 1050px) {
+    .filters_popup{
+        right: 27%;
+        top: 8.1%;
+        width: 44%;
+    } 
+} */
+
+/* @media screen and (min-width: 1000px) {
+    .filters_popup{
+        right: 27%;
+        top: 8.4%;
+        width: 44%;
+    } 
+}
+
+@media screen and (max-width: 950px) {
+    .filters_popup{
+        right: 27%;
+        top: 10%;
+        width: 45%;
+    } 
+} */
+
 /* All Phones */
 @media screen and (max-width: 730px) {
     /* HOME PAGE */
+    
     .sidebar{
-        width: 35%;
+        width: 30%;
         height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: start;
         justify-content: start;
         row-gap: .5rem;
-        padding: .1rem;
+        padding: 0;
         margin-top: 3rem;
         position: fixed;
         left: -100%;
@@ -718,41 +976,39 @@ iframe{
     }
 
     ul {
+        width: 100%;
         list-style-type: none;
         padding: 0;
         margin: 0;
     }
 
-    li{
-        margin-bottom: .5rem;
-    }
-
     .side-anchor{
         width: 100%;
-        padding: 0 .25rem;
+        padding: .1rem .2rem;
     }
 
     .side-anchor a{
         display: block;
+        width: 100%;
         text-decoration: none;
         font-size: 1rem;
-        padding: .5rem;
+        padding: .5rem 1rem;
         border-radius: .5rem;
-        color: #003a4d;
+        color: #5C4033;
     }
 
     .side-anchor a:hover{
-        background-color: #f6b980;
+        background-color: #F8A44C;
     }
 
     .account-container{
         width: 100%;
         height: auto;
-        padding-left: 1.4rem;
+        padding-left: .6rem;
     }
 
     .sidebar-signup{
-        background-color: #497BAF;
+        background-color: #F8A44C;
         padding: .5rem .7rem;
         font-size: .9rem;
         font-weight: 550;
@@ -760,7 +1016,7 @@ iframe{
         outline: none;
         border: none;
         cursor: pointer;
-        color: #F9F9F9;
+        color: #5C4033;
     }
 
     .header{
@@ -776,12 +1032,12 @@ iframe{
         display: block;
         background: none;
         border: none;
-        cursor: pointer;
+        padding: .5rem .5rem;
     }
 
     .side_button:hover{
-        border: 1px solid #E27300;
-        padding: .5rem .5rem;
+        cursor: pointer;
+        background-color: #F6D19D;
         border-radius: 1000rem;
     }
 

@@ -1,7 +1,7 @@
 let heroSection = document.getElementById('hero-section')
 let randomRecipes = document.getElementById(`random-recipes`)
 let searchResults = document.getElementById(`search-results`)
-let randomRecipesSection = document.getElementById('random-recipes');
+let randomRecipesSection = document.getElementById('random-recipes')
 let favouritesListButton = document.getElementById(`favourites-button`)
 let searchBar = document.getElementById(`search-input`)
 let sidebarButton = document.getElementById(`side-button`)
@@ -23,6 +23,8 @@ function rotateBackground() {
 }
 setInterval(rotateBackground, 3000); // every 3 seconds
 
+// Filters Buttons
+// Specific Filters
 
 // Get 12 random meals using the API
 const randomFoodAPI = 'https://www.themealdb.com/api/json/v1/1/random.php'
@@ -33,6 +35,7 @@ async function fetchRandomMeal() {
 }
 fetchRandomMeal();
 
+// this creates the recipe_card 
 function createCard(meal) {
   const categoryName = meal.strCategory === "Miscellaneous" ? "Other" : meal.strCategory;
 
@@ -42,13 +45,15 @@ function createCard(meal) {
   anchorLink.target = "_blank";
   anchorLink.rel = "noopener noreferrer";
 
-  // === Thumbnail ===
+  // === Make thumbnail a background image ===
   let thumbnailDiv = document.createElement('div');
   thumbnailDiv.classList.add('thumbnail');
-
-  let thumbnail = document.createElement('img');
-  thumbnail.src = meal.strMealThumb;
-  thumbnail.alt = meal.strMeal;
+  thumbnailDiv.style.backgroundImage = `url(${meal.strMealThumb})`;
+  thumbnailDiv.style.backgroundSize = 'cover';
+  thumbnailDiv.style.backgroundPosition = 'center';
+  thumbnailDiv.style.backgroundRepeat = 'no-repeat';
+  thumbnailDiv.style.borderRadius = '.75rem';
+  thumbnailDiv.style.aspectRatio = '16 / 10';
 
   // === Heart overlay ===
   let heartContainer = document.createElement('div');
@@ -86,7 +91,7 @@ function createCard(meal) {
   });
 
   heartContainer.appendChild(heartIcon);
-  thumbnailDiv.append(thumbnail, heartContainer);
+  thumbnailDiv.append(heartContainer);
 
   // === Details ===
   let detailsDiv = document.createElement('div');
@@ -229,7 +234,6 @@ async function getCategories() {
     return categories;
 }
 
-
 // Search for recipes and display in the UI
 searchBar.addEventListener('input', async function () {
     const query = searchBar.value.trim();
@@ -269,8 +273,6 @@ sidebarButton.addEventListener('click', () => {
 favouritesListButton.addEventListener(`click`, () => {
   window.location.href = 'favourites.html';
 });
-  
+ 
 
-
-
-
+export { createCard, randomRecipes, loadRandomRecipes };
