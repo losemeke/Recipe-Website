@@ -246,10 +246,16 @@ h1{
 
 input{
     width: 50%;
-    padding: .6rem;
+    padding: .7rem 1.2rem;
     border-radius: 100rem;
-    border: none;
     background-color: white;
+    outline: none;
+    border: 1.6px solid transparent; 
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #F49B36; /* your accent orange */
 }
 
 .filters_container{
