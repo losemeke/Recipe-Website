@@ -23,12 +23,22 @@ function setupLogoLink() {
 }
  
 function setupFavouritesNavigation() {
-    const favouritesListButton = document.getElementById("favourites-button");
-    if (favouritesListButton) {
-      favouritesListButton.addEventListener("click", () => {
-        window.location.href = "favourites.html";
-      });
-    }
+  let favouritesListButton = document.getElementById("favourites-button");
+  if (favouritesListButton) {
+    favouritesListButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // prevent rapid-fire multiple tab opens
+      if (favouritesListButton.disabled) return;
+      favouritesListButton.disabled = true;
+      setTimeout(() => {
+        favouritesListButton.disabled = false;
+      }, 1000);
+
+      window.open('favourites.html', '_blank');
+    });
+  }
 }
   
 // Utility: Estimated Prep Time

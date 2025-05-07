@@ -214,7 +214,4 @@ sidebarButton.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
-// === Favourites redirect ===
-favouritesListButton.addEventListener('click', () => {
-  window.open('favourites.html', '_blank');
-});
+
