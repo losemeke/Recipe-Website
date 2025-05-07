@@ -8,25 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <div class="side-links">
-            <ul>                    
-                <li class="side-anchor"> 
-                    <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Home </a> 
-                </li>
-                <li class="side-anchor"> 
-                    <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Saved Recipes </a> 
-                </li>
-                <li class="side-anchor"> 
-                    <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Filters </a> 
-                </li>
-            </ul>
-        </div>
-        
-        <div class="account-container">
-            <button class="sidebar-signup"> Sign up </button>
-        </div>
-    </div>
 
     <div class="recipe_page">
         <div class="sidebar" id="sidebar">
@@ -64,7 +45,7 @@
             <div class="left_side">
                 <button class="side_button" id="side-button"> <i class="fa-solid fa-bars fa-xl"></i> </button>
 
-                <div class="logo_container">
+                <div class="logo_container" id="logo_container">
                     <img src="./ASSETS/image.png" alt="logo image" class="logo_img">
                     <p> Letté Recipes </p>
                 </div>
@@ -107,15 +88,14 @@
                         </div>
 
                         <div class="video_actions">
-                            <button id="like-button">
-                                <i class="fa-regular fa-heart fa-2xl" id="like-icon"></i>
+                            <button class="va_button" id="like-button">
+                                <i class="fa-regular fa-heart fa-xl" id="like-icon"></i>
                                 
                                 <p> Favourite </p>
                             </button>
 
-                            <button>
-                                <!-- <i class="fa-solid fa-share fa-2xl"></i> -->
-                                <svg class="share_icon" id="share-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.75rem" height="1.75rem" fill="none" stroke="black" stroke-width="32">
+                            <button class="va_button">
+                                <svg class="share_icon" id="share-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.75rem" height="1.75rem" fill="none" stroke="#4B2E2E" stroke-width="32">
                                     <path d="M503.7 189.8L342.6 50.8c-14.7-12.3-36.6-1.8-36.6 17v85.1C137 156.9 73.6 256.3 41.3 356.9c-2.6 8.4 6.3 14.9 13.6 10.1C150.6 314.3 211.2 268.7 306 268.7v85c0 18.8 21.9 29.3 36.6 17l161.1-139c10.1-8.7 10.1-25.3 0-34.8z"/>
                                   </svg>
                                 <p> Share </p>
@@ -166,7 +146,9 @@
         </div>
     </div>
 
-    <script src="./index.js"></script>
-    <script src="./recipe.js"></script>
+    <script type="module" src="./recipe.js"></script>
+    <!-- <script type="module" src="./index.js"></script>
+    <script type="module" src="./filters.js"></script>
+    <script type="module" src="./favourites.js"></script> -->
 </body>
 </html>

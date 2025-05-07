@@ -19,7 +19,7 @@
                         <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Saved Recipes </a> 
                     </li>
                     <li class="side-anchor"> 
-                        <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> Filters </a> 
+                        <a href="https://www.linkedin.com/in/laeticia-osemeke/" target="#"> About Us </a> 
                     </li>
                 </ul>
             </div>
@@ -34,7 +34,7 @@
                 <div class="left_side">
                     <button class="side_button" id="side-button"> <i class="fa-solid fa-bars fa-xl"></i> </button>
     
-                    <div class="logo_container">
+                    <div class="logo_container" id="logo_container">
                         <img src="./ASSETS/image.png" alt="logo image" class="logo_img">
                         <p> Letté Recipes </p>
                     </div>
@@ -43,13 +43,13 @@
                 <div class="right_side">
                     <div class="right_box">
                         <button class="favourites_button" id="favourites-button">
-                            <p class="button_text"> Favourites </p>
+                            <p class="button_text hidden_button_text"> Favourites </p>
                             <i class="fa-solid fa-heart fa-lg"></i>
                         </button>
                         
                         <div class="signup_container">
-                            <button class="signin_button"> Sign In </button>
-                            <button class="signup_button"> Sign Up </button>
+                            <button class="signin_button button_text"> Sign In </button>
+                            <button class="signup_button button_text hidden_button_text"> Sign Up </button>
                         </div>
                     </div>
                     
@@ -97,7 +97,147 @@
                         </div>
                     </div>
                 </section>
+
+                <div class="filters_popup hidden" id="filters-popup">
+                    <div class="categories">
+                        <div class="filter_categories diet_filter_categories">
+                            <div class="filter_label">
+                                <p> Diet</p>
+                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                            </div>
                 
+                            <div class="checklist_containers hidden">
+                                <ul class="filters_ul diet_checklist">
+                                    <li> <label> <input type="checkbox" value="Beef"> Beef </label> </li>
+                                    <li> <label> <input type="checkbox" value="Breakfast"> Breakfast </label> </li>
+                                    <li> <label> <input type="checkbox" value="Chicken"> Chicken </label> </li>
+                                    <li> <label> <input type="checkbox" value="Dessert"> Dessert </label> </li>
+                                    <li> <label> <input type="checkbox" value="Goat"> Goat </label> </li>
+                                    <li> <label> <input type="checkbox" value="Lamb"> Lamb </label> </li>
+                                    <li> <label> <input type="checkbox" value="Pasta"> Pasta </label> </li>
+                                    <li> <label> <input type="checkbox" value="Pork"> Pork </label> </li>
+                                    <li> <label> <input type="checkbox" value="Seafood"> Seafood </label> </li>
+                                    <li> <label> <input type="checkbox" value="Side"> Side </label> </li>
+                                    <li> <label> <input type="checkbox" value="Starter"> Starter </label> </li>
+                                    <li> <label> <input type="checkbox" value="Vegan"> Vegan </label> </li>
+                                    <li> <label> <input type="checkbox" value="Vegetarian"> Vegetarian </label> </li>
+                                    <li> <label> <input type="checkbox" value="Miscellaneous"> Other </label> </li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="filter_categories region_filter_categories">
+                            <div class="filter_label" id="region_filter_label">
+                                <p> Region </p>
+                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                            </div>
+                
+                            <div class="regional_checklist hidden">
+                                <div class="checklists region_checklist">
+                                    <div class="filter_label regional_label africa">
+                                        <p> Africa </p>
+                                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                                    </div>
+                
+                                    <div class="checklist_containers">
+                                        <ul class="filters_ul countries">
+                                            <li> <label> <input type="checkbox" value="Kenyan"> Kenyan </label> </li>
+                                            <li> <label> <input type="checkbox" value="Moroccan"> Moroccan </label> </li>
+                                            <li> <label> <input type="checkbox" value="Tunisian"> Tunisian </label> </li>
+                                            <li> <label> <input type="checkbox" value="Egyptian"> Egyptian </label> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                
+                                <div class="region_checklist">
+                                    <div class="filter_label regional_label asia" id="asia_filter_label">
+                                        <p> Asia </p>
+                                        <button> <i class="fa-solid fa-chevron-right" id="asia_dropdown"></i> </button>
+                                    </div>
+                
+                                    <div class="checklist_containers">
+                                        <ul class="filters_ul countries">
+                                            <li> <label> <input type="checkbox" value="Chinese"> Chinese </label> </li>
+                                            <li> <label> <input type="checkbox" value="Filipino"> Filipino </label> </li>
+                                            <li> <label> <input type="checkbox" value="Indian"> Indian </label> </li>
+                                            <li> <label> <input type="checkbox" value="Japanese"> Japanese </label> </li>
+                                            <li> <label> <input type="checkbox" value="Malaysian"> Malaysian </label> </li>
+                                            <li> <label> <input type="checkbox" value="Thai"> Thai </label> </li>
+                                            <li> <label> <input type="checkbox" value="Vietnamese"> Vietnamese </label> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                
+                                <div class="region_checklist">
+                                    <div class="filter_label regional_label caribbean">
+                                        <p> Caribbean </p>
+                                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                                    </div>
+                
+                                    <div class="checklist_containers">
+                                        <ul class="filters_ul countries">
+                                            <li> <label> <input type="checkbox" value="Jamaican"> Jamaican </label> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                
+                                <div class="region_checklist">
+                                    <div class="filter_label regional_label europe" id="europe_filter_label">
+                                        <p> Europe </p>
+                                        <button> <i class="fa-solid fa-chevron-right" id="europe_dropdown"></i> </button>
+                                    </div>
+                
+                                    <div class="checklist_containers">
+                                        <ul class="filters_ul countries">
+                                            <li> <label> <input type="checkbox" value="British"> British </label> </li>
+                                            <li> <label> <input type="checkbox" value="Dutch"> Dutch </label> </li>
+                                            <li> <label> <input type="checkbox" value="French"> French </label> </li>
+                                            <li> <label> <input type="checkbox" value="Greek"> Greek </label> </li>
+                                            <li> <label> <input type="checkbox" value="Irish"> Irish </label> </li>
+                                            <li> <label> <input type="checkbox" value="Italian"> Italian </label> </li>
+                                            <li> <label> <input type="checkbox" value="Polish"> Polish </label> </li>
+                                            <li> <label> <input type="checkbox" value="Portuguese"> Portuguese </label> </li>
+                                            <li> <label> <input type="checkbox" value="Russian"> Russian </label> </li>
+                                            <li> <label> <input type="checkbox" value="Spanish"> Spanish </label> </li>
+                                            <li> <label> <input type="checkbox" value="Ukrainian"> Ukrainian </label> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="region_checklist">
+                                    <div class="filter_label regional_label north-america">
+                                        <p> North America </p>
+                                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
+                                    </div>
+                
+                                    <div class="checklist_containers">
+                                        <ul class="filters_ul countries">
+                                            <li> <label> <input type="checkbox" value="American"> American </label> </li>
+                                            <li> <label> <input type="checkbox" value="Canadian"> Canadian </label> </li>
+                                            <li> <label> <input type="checkbox" value="Mexican"> Mexican </label> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                
+                                <!-- <div class="region_checklist">
+                                    <div class="filter_label regional_label south-america">
+                                        <p> South America </p>
+                                        <button> <i class="fa-solid fa-chevron-right" id="sa_dropdown"></i> </button>
+                                    </div>
+                
+                                    <div class="checklist_containers">
+                                        <ul class="filters_ul countries">
+                                            <li> <label> <input type="checkbox" value="Uruguayan"> Uruguayan </label> </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="clear_filters" id="clear-filters"> Clear Filters </button>
+                </div>
+
                 <section class="search_results hidden" id="search-results"></section>
     
                 <section class="random-recipes" id="random-recipes">
@@ -125,149 +265,13 @@
             </div>
         </div>
     
-        <div class="filters_popup hidden" id="filters-popup">
-            <div class="categories">
-                <div class="filter_categories diet_filter_categories">
-                    <div class="filter_label">
-                        <p> Diet</p>
-                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
-                    </div>
         
-                    <div class="checklist_containers hidden">
-                        <ul class="diet_checklist">
-                            <li> <label> <input type="checkbox" value="Beef"> Beef </label> </li>
-                            <li> <label> <input type="checkbox" value="Breakfast"> Breakfast </label> </li>
-                            <li> <label> <input type="checkbox" value="Chicken"> Chicken </label> </li>
-                            <li> <label> <input type="checkbox" value="Dessert"> Dessert </label> </li>
-                            <li> <label> <input type="checkbox" value="Goat"> Goat </label> </li>
-                            <li> <label> <input type="checkbox" value="Lamb"> Lamb </label> </li>
-                            <li> <label> <input type="checkbox" value="Pasta"> Pasta </label> </li>
-                            <li> <label> <input type="checkbox" value="Pork"> Pork </label> </li>
-                            <li> <label> <input type="checkbox" value="Seafood"> Seafood </label> </li>
-                            <li> <label> <input type="checkbox" value="Side"> Side </label> </li>
-                            <li> <label> <input type="checkbox" value="Starter"> Starter </label> </li>
-                            <li> <label> <input type="checkbox" value="Vegan"> Vegan </label> </li>
-                            <li> <label> <input type="checkbox" value="Vegetarian"> Vegetarian </label> </li>
-                            <li> <label> <input type="checkbox" value="Miscellaneous"> Other </label> </li>
-                        </ul>
-                    </div>
-                </div>
-        
-                <div class="filter_categories region_filter_categories">
-                    <div class="filter_label" id="region_filter_label">
-                        <p> Region </p>
-                        <button> <i class="fa-solid fa-chevron-right"></i> </button>
-                    </div>
-        
-                    <div class="regional_checklist hidden">
-                        <div class="checklists region_checklist">
-                            <div class="filter_label regional_label africa">
-                                <p> Africa </p>
-                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
-                            </div>
-        
-                            <div class="checklist_containers">
-                                <ul class="countries">
-                                    <li> <label> <input type="checkbox" value="Kenyan"> Kenyan </label> </li>
-                                    <li> <label> <input type="checkbox" value="Moroccan"> Moroccan </label> </li>
-                                    <li> <label> <input type="checkbox" value="Tunisian"> Tunisian </label> </li>
-                                    <li> <label> <input type="checkbox" value="Egyptian"> Egyptian </label> </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <div class="region_checklist">
-                            <div class="filter_label regional_label asia" id="asia_filter_label">
-                                <p> Asia </p>
-                                <button> <i class="fa-solid fa-chevron-right" id="asia_dropdown"></i> </button>
-                            </div>
-        
-                            <div class="checklist_containers">
-                                <ul class="countries">
-                                    <li> <label> <input type="checkbox" value="Chinese"> Chinese </label> </li>
-                                    <li> <label> <input type="checkbox" value="Filipino"> Filipino </label> </li>
-                                    <li> <label> <input type="checkbox" value="Indian"> Indian </label> </li>
-                                    <li> <label> <input type="checkbox" value="Japanese"> Japanese </label> </li>
-                                    <li> <label> <input type="checkbox" value="Malaysian"> Malaysian </label> </li>
-                                    <li> <label> <input type="checkbox" value="Thai"> Thai </label> </li>
-                                    <li> <label> <input type="checkbox" value="Vietnamese"> Vietnamese </label> </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <div class="region_checklist">
-                            <div class="filter_label regional_label caribbean">
-                                <p> Caribbean </p>
-                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
-                            </div>
-        
-                            <div class="checklist_containers">
-                                <ul class="countries">
-                                    <li> <label> <input type="checkbox" value="Jamaican"> Jamaican </label> </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <div class="region_checklist">
-                            <div class="filter_label regional_label europe" id="europe_filter_label">
-                                <p> Europe </p>
-                                <button> <i class="fa-solid fa-chevron-right" id="europe_dropdown"></i> </button>
-                            </div>
-        
-                            <div class="checklist_containers">
-                                <ul class="countries">
-                                    <li> <label> <input type="checkbox" value="British"> British </label> </li>
-                                    <li> <label> <input type="checkbox" value="Dutch"> Dutch </label> </li>
-                                    <li> <label> <input type="checkbox" value="French"> French </label> </li>
-                                    <li> <label> <input type="checkbox" value="Greek"> Greek </label> </li>
-                                    <li> <label> <input type="checkbox" value="Irish"> Irish </label> </li>
-                                    <li> <label> <input type="checkbox" value="Italian"> Italian </label> </li>
-                                    <li> <label> <input type="checkbox" value="Polish"> Polish </label> </li>
-                                    <li> <label> <input type="checkbox" value="Portuguese"> Portuguese </label> </li>
-                                    <li> <label> <input type="checkbox" value="Russian"> Russian </label> </li>
-                                    <li> <label> <input type="checkbox" value="Spanish"> Spanish </label> </li>
-                                    <li> <label> <input type="checkbox" value="Ukrainian"> Ukrainian </label> </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="region_checklist">
-                            <div class="filter_label regional_label north-america">
-                                <p> North America </p>
-                                <button> <i class="fa-solid fa-chevron-right"></i> </button>
-                            </div>
-        
-                            <div class="checklist_containers">
-                                <ul class="countries">
-                                    <li> <label> <input type="checkbox" value="American"> American </label> </li>
-                                    <li> <label> <input type="checkbox" value="Canadian"> Canadian </label> </li>
-                                    <li> <label> <input type="checkbox" value="Mexican"> Mexican </label> </li>
-                                </ul>
-                            </div>
-                        </div>
-        
-                        <!-- <div class="region_checklist">
-                            <div class="filter_label regional_label south-america">
-                                <p> South America </p>
-                                <button> <i class="fa-solid fa-chevron-right" id="sa_dropdown"></i> </button>
-                            </div>
-        
-                            <div class="checklist_containers">
-                                <ul class="countries">
-                                    <li> <label> <input type="checkbox" value="Uruguayan"> Uruguayan </label> </li>
-                                </ul>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-            
-            <button class="clear_filters" id="clear-filters"> Clear Filters </button>
-        </div>
     </div>
     
 
     <script type="module" src="./index.js"></script>
+    <script type="module" src="./recipe.js"></script>
+    <script type="module" src="./favourites.js"></script>
     <script type="module" src="./filters.js"></script>
 </body>
 </html>
