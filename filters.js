@@ -1,10 +1,11 @@
 import { createCard } from './shared.js';
 
-const randomRecipes = document.getElementById('random-recipes');
-const filtersButton = document.getElementById('filters-button');
-const filtersPopup = document.getElementById('filters-popup');
-const clearFiltersButton = document.getElementById('clear-filters');
+let randomRecipes = document.getElementById('random-recipes');
+let filtersButton = document.getElementById('filters-button');
+let filtersPopup = document.getElementById('filters-popup');
+let clearFiltersButton = document.getElementById('clear-filters');
 
+// GROUPEVENT LISTENERS
 document.addEventListener('DOMContentLoaded', () => {
   // Toggle filter popup
   filtersButton?.addEventListener('click', () => {
@@ -21,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('chinese-button')?.addEventListener('click', () => fetchAndRenderRegion('Chinese'));
   document.getElementById('mexican-button')?.addEventListener('click', () => fetchAndRenderRegion('Mexican'));
   document.getElementById('italian-button')?.addEventListener('click', () => fetchAndRenderRegion('Italian'));
+
+  // ✅ Live filtering on checkbox change
+  document.querySelectorAll('.filters_popup input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', applyLiveFilters);
+  });
 
   // Clear filters
   clearFiltersButton?.addEventListener('click', () => {
@@ -45,29 +51,66 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// === Fetch by Category
-async function fetchAndRenderCategory(category) {
-  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
-  const data = await res.json();
-  randomRecipes.innerHTML = '';
+async function applyLiveFilters() {
+  const checkboxes = document.querySelectorAll('.filters_popup input[type="checkbox"]:checked');
+  const selected = Array.from(checkboxes).map(cb => cb.value);
 
-  if (data.meals) {
-    for (let meal of data.meals.slice(0, 12)) {
-      const detail = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`);
-      const detailData = await detail.json();
-      randomRecipes.appendChild(createCard(detailData.meals[0]));
-    }
+  if (selected.length === 0) {
+    randomRecipes.innerHTML = `<p>Please select at least one filter.</p>`;
+    return;
   }
-}
 
-// === Fetch by Region
-async function fetchAndRenderRegion(area) {
+  // Get all meals
   const allMeals = [];
   const letters = 'abcdefghijklmnopqrstuvwxyz';
 
   for (let letter of letters) {
     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`);
     const data = await res.json();
+    if (data.meals) allMeals.push(...data.meals);
+  }
+
+  // Match by category OR region
+  const filteredMeals = allMeals.filter(meal =>
+    selected.includes(meal.strCategory) || selected.includes(meal.strArea)
+  );
+
+  // Clear and render results
+  randomRecipes.innerHTML = '';
+  if (filteredMeals.length > 0) {
+    filteredMeals.forEach(meal => {
+      const card = createCard(meal);
+      randomRecipes.appendChild(card);
+    });
+  } else {
+    randomRecipes.innerHTML = `<p>No recipes found for selected filters.</p>`;
+  }
+}
+
+// === Fetch by Category
+async function fetchAndRenderCategory(category) {
+  let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+  let data = await res.json();
+  randomRecipes.innerHTML = '';
+
+  if (data.meals) {
+    for (let meal of data.meals) {
+      let detail = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`);
+      let detailData = await detail.json();
+      randomRecipes.appendChild(createCard(detailData.meals[0]));
+    }
+  }
+}
+
+// === Fetch by Region
+// As there is no free API to pull by region, we will loop through all letters to fetch every meal then filter them
+async function fetchAndRenderRegion(area) {
+  let allMeals = [];
+  let letters = 'abcdefghijklmnopqrstuvwxyz';
+
+  for (let letter of letters) {
+    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`);
+    let data = await res.json();
     if (data.meals) {
       allMeals.push(...data.meals);
     }
@@ -78,7 +121,7 @@ async function fetchAndRenderRegion(area) {
   randomRecipes.innerHTML = '';
 
   if (regionMeals.length > 0) {
-    regionMeals.slice(0, 12).forEach(meal => {
+    regionMeals.forEach(meal => {
       randomRecipes.appendChild(createCard(meal));
     });
   } else {
